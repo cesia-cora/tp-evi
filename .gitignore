@@ -1,5 +1,6 @@
 /core/__pycache__/
 /pyme_app/__pycache__/
+/pyme_app/migrations/*
 /pyme_app/migrations/__pycache__/
 *.py[cod]
 .venv/
