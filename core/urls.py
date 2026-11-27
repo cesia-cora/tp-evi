@@ -20,5 +20,5 @@ from pyme_app.views import reporte_tareas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('reporte/', reporte_tareas, name='reporte_tareas'),
+    ##path('reporte/', reporte_tareas, name='reporte_tareas'),
 ]
