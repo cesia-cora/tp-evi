@@ -10,12 +10,14 @@ def exportar_tareas_csv(modeladmin, request, queryset):
     response.write("\ufeff")
 
     writer = csv.writer(response)
-    writer.writerow(["ID", "Título", "Completada", "Creada"])
+    writer.writerow(["ID", "Título", "Empleado", "Completada", "Creada"])
 
     for tarea in queryset:
         writer.writerow([
             tarea.id,
             tarea.titulo,
+            tarea.empleado.username,
+            tarea.get_estado_display(),
             "Sí" if tarea.completada else "No",
             tarea.creada_en.strftime("%Y-%m-%d %H:%M") if getattr(tarea, "creada_en", None) else "",
         ])
