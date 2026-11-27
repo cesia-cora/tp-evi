@@ -3,7 +3,7 @@
 Aplicación web/API desarrollada con **Django** y **PostgreSQL** para la gestión de tareas, con soporte para administración desde Django Admin y exportación de registros a CSV.
 
 ## Tecnologías principales
-- **Backend:** Python 3 / Django
+- **Backend:** Python 3.12 / Django
 - **Base de datos:** PostgreSQL 16 (`postgres:16-alpine`)
 - **Contenedores:** Docker & Docker Compose
 
@@ -84,7 +84,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### Aplicar los modelos de la base de datos
+### Aplicar cambios a los modelos de la base de datos
 
 #### Crear los archivos de migración
 
@@ -103,10 +103,6 @@ python3 manage.py migrate
 ```
 python3 manage.py runserver
 ```
-
-### Acceder a la aplicación en el navegador
-
-Entrar en <b>localhost:8000/admin</b> para acceder a la base de datos y descargar reportes.
 
 ### Ver estado de los contenedores
 
@@ -142,7 +138,7 @@ flowchart TD
             subgraph ApiService["Servicio: pyme_api (Dockerfile)"]
                 direction TB
                 Core["core/<br/>(settings.py, urls.py, wsgi.py)"]
-                App["pyme_app/<br/>(models.py, views.py, urls.py)"]
+                App["pyme_app/<br/>(models.py, views.py, signals.py, admin.py, apps.py)"]
                 Core <--> App
             end
 
